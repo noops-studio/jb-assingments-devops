@@ -1,0 +1,26 @@
+aws:
+  region: us-east-1
+
+vpc:
+  cidr: 10.0.0.0/16
+  auto_create: true
+  subnets:
+    - cidr: 10.0.1.0/24
+      az: us-east-1a
+    - cidr: 10.0.2.0/24
+      az: us-east-1b
+
+instance:
+  type: t3.micro
+
+asg:
+  min_size: 1
+  desired_capacity: 2
+  max_size: 3
+  launch_template_id: null
+
+scaling:
+  scale_out_threshold: 50
+  scale_in_threshold: 20
+
+environment: dev
