@@ -1,6 +1,6 @@
 
 variable "ec2typeVar" { 
- type = "string"
+ type = string
  default = "t3.large" 
 }
 
